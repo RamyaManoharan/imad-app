@@ -9,7 +9,22 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articleTwo={
+var articles={
+    'aro':{  title :'Article One',
+    heading:'Article One',
+    date: 'Sept 4,2017',
+    content :` <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>
+                  <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>
+                  <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>`
+        
+    },
+    'art':{
     title :'Article Two',
     heading:'Article Two',
     date: 'Sept 5,2017',
@@ -22,6 +37,23 @@ var articleTwo={
                   <p>
                     I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
                 </p>`
+        
+    },
+    'arth':{
+          title :'Article Three',
+    heading:'Article Three',
+    date: 'Sept 6,2017',
+    content :` <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>
+                  <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>
+                  <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>`
+    }
+                
 };
 function createTemplate(data)
 {
@@ -62,8 +94,9 @@ var htmlTemplate = `
 return htmlTemplate;
 }
 
-app.get('/art', function (req, res) {
-  res.send(createTemplate(articleTwo));
+app.get('/:ar', function (req, res) {
+    var ar=req.params.ar;
+  res.send(createTemplate(articles[ar]));
 });
 
 app.get('/aro', function (req, res) {
