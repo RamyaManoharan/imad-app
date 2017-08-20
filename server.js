@@ -10,10 +10,10 @@ app.get('/', function (req, res) {
   
 });
 
-var count=0;
+var counter=0;
 app.get('/counter', function (req, res) {
-    count=count+1;
-  res.send(count.toString());
+    counter=counter+1;
+  res.send(counter.toString());
 });
 
 var articles={
