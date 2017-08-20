@@ -7,6 +7,13 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  
+});
+
+var count=0;
+app.get('/counter', function (req, res) {
+    count=count+1;
+  res.send(count.toString());
 });
 
 var articles={
@@ -99,11 +106,7 @@ app.get('/:ar', function (req, res) {
   res.send(createTemplate(articles[ar]));
 });
 
-var count=0;
-app.get('/counter', function (req, res) {
-    count=count+1;
-  res.send(count.toString());
-});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
