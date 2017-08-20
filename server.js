@@ -99,14 +99,6 @@ app.get('/:ar', function (req, res) {
   res.send(createTemplate(articles[ar]));
 });
 
-app.get('/aro', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'aro.html'));
-});
-
-app.get('/arth', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'arth.html'));
-});
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
