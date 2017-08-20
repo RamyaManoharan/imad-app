@@ -13,6 +13,14 @@ app.get('/aro', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'aro.html'));
 });
 
+app.get('/art', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'art.html'));
+});
+
+app.get('/arth', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'arth.html'));
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
