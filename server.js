@@ -9,8 +9,61 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var articleTwo={
+    title :'Article Two',
+    heading:'Article Two',
+    date: 'Sept 5,2017',
+    content :` <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>
+                  <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>
+                  <p>
+                    I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.I am creating my article.Gonna copy paste it.
+                </p>`
+};
+function createTemplate(data)
+{
+var title=data.title;    
+var heading=data.heading;
+var date=data.date;
+var content=data.content;
+var htmlTemplate = `
+
+    <html>
+    <head>
+        <title>
+            $(title)
+        </title>
+         <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+ <link href = "/ui/style.css" rel= "stylesheet"/>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <a href="/">HOME</a>
+            </div>
+            <hr/>
+            <div>
+                <h3>
+                    $(heading)
+                </h3>
+            </div>
+            <div>
+                $(date)
+            </div>
+            $(content)
+            </div>
+        </div>
+    </body>
+</html>`;
+
+return htmlTemplate;
+}
+
 app.get('/aro', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'aro.html'));
+  res.send(createTemplate(articleTwo));
 });
 
 app.get('/art', function (req, res) {
