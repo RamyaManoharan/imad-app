@@ -53,7 +53,7 @@ var htmlTemplate = `
             <div>
                 ${date}
             </div>
-            $({content}
+            ${content}
             </div>
         </div>
     </body>
@@ -62,12 +62,12 @@ var htmlTemplate = `
 return htmlTemplate;
 }
 
-app.get('/aro', function (req, res) {
+app.get('/art', function (req, res) {
   res.send(createTemplate(articleTwo));
 });
 
-app.get('/art', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'art.html'));
+app.get('/aro', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'aro.html'));
 });
 
 app.get('/arth', function (req, res) {
