@@ -102,7 +102,7 @@ app.get('/:ar', function (req, res) {
 var count=0;
 app.get('/counter', function (req, res) {
     count=count+1;
-  res.sendFile(count.toString();
+  res.send(count.toString());
 });
 
 app.get('/ui/style.css', function (req, res) {
