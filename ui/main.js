@@ -7,10 +7,10 @@ var b=document.getElementById('madi');
 var marginLeft=0;
 function moveRight()
 {
-    marginLeft=marginLeft+5;
+    marginLeft=marginLeft+1;
     b.style.marginLeft=marginLeft+'px';
 }
 
 b.onclick = function() {
-  var c = setInterval(moveRight,50);
+  var c = setInterval(moveRight,5);
 };
