@@ -1,5 +1,5 @@
 console.log('Loaded!');
 
 var a = document.getElementById('con');
-a.innerHTML="Back to HIII!!!";
+a.innerHTML = "Back to HIII!!!";
 
