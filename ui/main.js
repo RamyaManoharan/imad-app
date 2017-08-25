@@ -16,4 +16,4 @@ function exec()
    };
    request.open("GET","http://ramyamano15.imad.hasura-app.io/counter",true );
    request.send(null);
-};
+}
