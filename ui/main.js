@@ -1,4 +1,4 @@
-var button=document.getElementById('counter');
+
 function exec()
 {
    var request= new XMLHttpRequest();
@@ -15,5 +15,5 @@ function exec()
        
    };
    request.open("GET","http://ramyamano15.imad.hasura-app.io/counter",true );
-   request.send(null);
+   request.send();
 }
