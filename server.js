@@ -106,6 +106,11 @@ app.get('/:ar', function (req, res) {
   res.send(createTemplate(articles[ar]));
 });
 
+app.get('/favicon.ico', function (req, res) {
+
+  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
+
+});
 
 
 app.get('/ui/style.css', function (req, res) {
