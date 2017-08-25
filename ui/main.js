@@ -14,6 +14,6 @@ button.onclick=function()
        }
        
    };
-   r.open('GET',"http://ramyamano15.imad.hasura-app.io/counter",true );
+   r.open('GET','http://ramyamano15.imad.hasura-app.io/counter',true );
    r.send(null);
 };
