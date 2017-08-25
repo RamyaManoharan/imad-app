@@ -1,19 +1,19 @@
 var button=document.getElementById('counter');
 button.onclick=function()
 {
-   var r= new XMLHttpRequest();
+   var request= new XMLHttpRequest();
    
-   r.onreadystatechange = function()
+   request.onreadystatechange = function()
    {
-       if(r.readyState===XMLHttpRequest.DONE){
-       if(r.Status===200){
-           var counter=r.responseText;
+       if(request.readyState===XMLHttpRequest.DONE){
+       if(request.Status===200){
+           var counter=request.responseText;
            var span=document.getElementById('count');
            span.innerHTML=counter.toString();
        }
        }
        
    };
-   r.open('GET','http://ramyamano15.imad.hasura-app.io/counter',true );
-   r.send(null);
+   request.open('GET','http://ramyamano15.imad.hasura-app.io/counter',true );
+   request.send(null);
 };
